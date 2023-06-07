@@ -29,14 +29,13 @@ for path in "${paths[@]}"; do
   if [ -f "$path" ]; then
     found=true
     echo "Discord asar found."
-    echo "Replacing with patched file..."
-    if sudo curl -o "$path" "$latesturl"; then
-      echo "Successful. Exiting..."
-      nohup Discord
+    echo "Downloading patched file..." 
+    if sudo wget -q "$latesturl" -O "$path"; then
+      echo "Sucessful. Exiting..."
+      nohup Discord &>/dev/null &
       exit 0
     else
       echo "Failure downloading, check your internet connection."
-      nohup Discord
       exit 1
     fi
   fi
@@ -44,6 +43,5 @@ done
 
 if [ "$found" != true ]; then
   echo "app.asar was not found, exiting..."
-  nohup Discord
   exit 1
 fi
