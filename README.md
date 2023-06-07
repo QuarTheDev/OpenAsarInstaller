@@ -30,7 +30,6 @@ After a few moments, OpenAsar will be removed and the stock `app.asar` will be r
 
 ### Credits
 
-[QuarTheDev](https://github.com/QuarTheDev/) - development of OpenAsarInstaller
-[GooseNest Team](https://github.com/GooseMod/) - development of OpenAsar
+[QuarTheDev](https://github.com/QuarTheDev/) - development of OpenAsarInstaller<br>[GooseNest Team](https://github.com/GooseMod/) - development of OpenAsar
 
 <sup>OpenAsarInstaller and OpenAsar are not affiliated with Discord.</sup>
