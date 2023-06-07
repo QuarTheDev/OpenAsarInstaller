@@ -36,6 +36,7 @@ for path in "${paths[@]}"; do
       exit 0
     else
       echo "Failure downloading, check your internet connection."
+      nohup Discord
       exit 1
     fi
   fi
@@ -43,5 +44,6 @@ done
 
 if [ "$found" != true ]; then
   echo "app.asar was not found, exiting..."
+  nohup Discord
   exit 1
 fi
