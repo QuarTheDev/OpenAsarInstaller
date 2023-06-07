@@ -13,7 +13,7 @@ paths=(
 
 # =======
 
-echo "OpenAsar Uninstaller"
+echo "OpenAsar Installer"
 
 found=false
 
@@ -29,16 +29,10 @@ for path in "${paths[@]}"; do
   if [ -f "$path" ]; then
     found=true
     echo "Discord asar found."
-    echo "Replacing with default file..."
-
-    if curl -o _app.asar "$latesturl"; then
-      mv -f _app.asar "$path"
-      echo "Successful. Exiting..."
-      exit 0
-    fi
-
-    if curl -o "$path" "$latesturl"; then
-      echo "Successful. Exiting..."
+    echo "Downloading patched file..."  
+    if sudo wget -q "$latesturl" -O "$path"; then
+      echo "Sucessful. Exiting..."
+      nohup Discord &>/dev/null &
       exit 0
     else
       echo "Failure downloading, check your internet connection."
