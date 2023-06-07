@@ -30,7 +30,7 @@ for path in "${paths[@]}"; do
     found=true
     echo "Discord asar found."
     echo "Replacing with patched file..."
-    if curl -o "$path" "$latesturl"; then
+    if sudo curl -o "$path" "$latesturl"; then
       echo "Successful. Exiting..."
       nohup Discord
       exit 0
